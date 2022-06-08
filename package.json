@@ -1,5 +1,9 @@
 {
   "name": "react-landing-component",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ygzaydn/react-landing-component"
+  },
   "version": "1.0.23",
   "description": "Landing component for homepages",
   "main": "index.js",
