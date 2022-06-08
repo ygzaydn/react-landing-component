@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=Courgette&display=swap");
+
+.landingImageGrid {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 95%);
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    &__image {
+        width: 105vw;
+        height: auto;
+        top: 0;
+        left: 0;
+        filter: brightness(0.4);
+        position: relative;
+        animation: movingImage 20s;
+        animation-iteration-count: infinite;
+        z-index: 0;
+    }
+    &__textGrid {
+        position: absolute;
+        top: 55%;
+        left: 5%;
+        z-index: 50;
+        & h1 {
+            font-size: 4.25rem;
+            font-family: "Courgette", cursive !important;
+        }
+        & span {
+            font-size: 1.75rem;
+            text-align: end;
+            display: block;
+            font-family: "Courgette", cursive !important;
+        }
+        & h1,
+        & span {
+            color: lightgray;
+            margin: 0;
+        }
+    }
+    &__downArrow {
+        position: absolute;
+        bottom: 0%;
+        right: 1.5%;
+        & h2 {
+            color: lightgray;
+            cursor: pointer;
+            font-size: 4.25rem;
+        }
+    }
+}
+
+@keyframes movingImage {
+    0% {
+        top: 0;
+        left: 0;
+    }
+    50% {
+        top: -2.5%;
+        left: -2.5%;
+    }
+    100% {
+        top: 0;
+        left: 0;
+    }
+}
+
+@media only screen and (max-width: 1100px) {
+    .landingImageGrid {
+        &__downArrow {
+            display: none;
+        }
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .landingImageGrid {
+        height: 50vh;
+        &__image {
+            height: 100%;
+        }
+
+        &__textGrid {
+            & h1 {
+                font-size: 5vw;
+            }
+            & span {
+                font-size: 2.5vw;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .landingImageGrid {
+        height: 50vh;
+        &__image {
+            height: 100%;
+            width: auto;
+        }
+        &__downArrow {
+            display: none;
+        }
+        &__textGrid {
+            & h1 {
+                font-size: 6vw;
+            }
+            & span {
+                font-size: 3vw;
+            }
+        }
+    }
+}
